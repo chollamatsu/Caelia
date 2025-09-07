@@ -1,0 +1,20 @@
+{
+  "name": "my-electron-app",
+  "version": "1.0.0",
+  "description": "test application on electron.js",
+  "main": "main.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development ELECTRON_RENDERER_URL=http://localhost:8080 concurrently \"npm run serve --prefix renderer\" \"wait-on http://localhost:8080 && npm start\"",
+    "start": "electron .",
+    "build": "npm run build --prefix renderer"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.0.0",
+    "electron": "^38.0.0",
+    "wait-on": "^8.0.4"
+  }
+}
