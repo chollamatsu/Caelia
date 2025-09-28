@@ -37,7 +37,7 @@ export default {
   height: 100%;
   display: grid;
   grid-template-columns: 15% auto;
-  background-color: var(var(--green-001));
+  background-color: var(--background-editor-page);
   gap: 20px;
 }
 </style>

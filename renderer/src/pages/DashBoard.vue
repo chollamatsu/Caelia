@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="dashboard-container">
     <h1>Hello user name account</h1>
   </div>
 </template>
@@ -11,8 +11,8 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  background-color: var(--dark-3);
+.dashboard-container {
+  background-color: var(--background-editor-dashboard);
   backdrop-filter: blur(20px); /* glass blur */
   -webkit-backdrop-filter: blur(20px);
   width: 100%;

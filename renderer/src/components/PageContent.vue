@@ -1,38 +1,63 @@
 <template>
-  <div class="container">
+  <div class="page-content-container">
     <div class="header-container">
       <h1>{{ contentData.name }}</h1>
     </div>
     <div class="body-container">
-      <span>{{ contentData.desc }}</span>
+      <!-- <span>{{ contentData.desc }}</span> -->
+      <dash-board v-if="isHomeEditor()" />
+      <todo-list v-if="isTodoEditor()" />
+      <patient-list v-if="isPatientEditor()" />
     </div>
   </div>
 </template>
 
 <script>
-//to do: do nav bar.
-/* หน้านี้เอาไว้เป็นskeletonให้หน้าอื่นๆ 
-รับ props จาก navbar-> ส่งข้อมูล title, api, อะไรพวกนี้มา จะได้เรียก component ถูก*/
+import { contentTypes } from "../constants";
+import DashBoard from "../pages/DashBoard.vue";
+import TodoList from "../pages/TodoList.vue";
+import PatientList from "../pages/PatientList.vue";
 export default {
   name: "PageContent",
+  components: {
+    DashBoard,
+    TodoList,
+    PatientList,
+  },
   props: {
     contentData: {
       type: Object,
-        require: true,
+      require: true,
       default: () => {},
     },
   },
+  methods: {
+    isHomeEditor() {
+      return this.contentData.type === contentTypes.HOME_EDITOR;
+    },
+    isTodoEditor() {
+      return this.contentData.type === contentTypes.TODO_EDITOR;
+    },
+    isPatientEditor() {
+      return this.contentData.type === contentTypes.PATIENTS_EDITOR;
+    }
+  }
 };
 </script>
 
 <style scoped>
-.container {
+.page-content-container {
   display: flex;
   flex-direction: column;
+  background-color: var(--background-editor-page);
+  width: 100%;
+  height: 100%;
 }
 
 .header-container {
-  display: grid;
+  display: flex;
+  flex-direction: row;
+  margin: 0 10px;
 }
 
 .body-container {
