@@ -1,0 +1,30 @@
+:root {
+  /* white */
+  --white-1: #ffffff;
+  --white-2: #f7f4ea;
+  --white-003: #F7F4EA;
+
+  /* dark */
+  --grey-1: #cccccc;
+  --dark-1: #37363d;
+  --dark-2: #44444E;
+  --dark-3: rgb(55, 54, 61, 0.2);
+
+  /* brown */
+  --brown-1: #b87c4c;
+  --brown-2: #ebd9d1;
+
+  /* green */
+  --dark-green-1: #3a7f7e;
+  --olive-green: #a8bba3;
+  --green-001: #D9E9CF;
+  --green-002: #B6CEB4;
+
+  /* blue  */
+  --blue-1: #b5def7;
+  --blue-2: #b5def773;
+  --aqua-1: #7bc4c1;
+
+  /* Nav bar */
+  --background-navbar: var(--green-001);
+}
