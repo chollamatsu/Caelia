@@ -29,7 +29,7 @@ function createWindow() {
   });
   console.log("process env:", process.env);
   console.log("process name:", process.env.NODE_ENV);
-  const isDev = process.env.NODE_ENV === 'development';
+  const isDev = process.env.NODE_ENV === "development";
 
   if (isDev) {
     // Load Vue dev server
@@ -37,18 +37,13 @@ function createWindow() {
     mainWindow.webContents.openDevTools();
   } else {
     // Load production build (after 'npm run build')
-    mainWindow.loadFile(path.join(__dirname, 'renderer/dist/index.html'));
+    mainWindow.loadFile(path.join(__dirname, "renderer/dist/index.html"));
   }
 }
 
 app.whenReady().then(createWindow);
 
 app.on("window-all-closed", () => {
-    app.quit();
-});
-
-app.on("activate", () => {
-  if (BrowserWindow.getAllWindows().length === 0) {
-    createWindow();
-  }
+  console.log("close app");
+  app.quit();
 });
