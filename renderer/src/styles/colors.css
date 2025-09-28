@@ -27,4 +27,12 @@
 
   /* Nav bar */
   --background-navbar: var(--green-001);
+  /* Editor Page */
+  --background-editor-page: var(--white-003);
+  /* Patient Editor */
+  --background-editor-patient: var(--dark-green-1);
+  /* Dashboard editor */
+  --background-editor-dashboard: var(--blue-1);
+  /* To do list editor */
+  --background-editor-todo-list: var(--brown-2);
 }
