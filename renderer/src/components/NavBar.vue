@@ -2,7 +2,7 @@
   <div class="container">
     <h1>Logo</h1>
     <div v-for="(item, idx) in menu" :key="idx">
-      <button @click="onClick(item)">{{ item.name }}</button>
+      <div class="nav-menu-item" @click="onClick(item)">{{ item.name }}</div>
     </div>
   </div>
 </template>
@@ -12,6 +12,7 @@ export default {
   name: "NavBar",
   data() {
     return {
+      selectItem: '',
       menu: [
         {
           id: 0,
@@ -39,6 +40,7 @@ export default {
   },
   methods: {
     onClick(item) {
+      this.selectItem = item;
       this.$emit("set-content-data", item);
     },
   },
@@ -54,5 +56,22 @@ export default {
   height: 100%;
   display: flex;
   flex-direction: column;
+}
+.nav-menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--green-001);
+  width: 100%;
+  height: 5vh;
+  cursor: pointer;
+}
+
+.nav-menu-item:hover {
+  background-color: var(--background-navbar-item-hover);
+}
+
+.nav-menu-item:active {
+  background-color: var(--background-navbar-item-hover);
 }
 </style>

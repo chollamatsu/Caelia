@@ -27,12 +27,23 @@
 
   /* Nav bar */
   --background-navbar: var(--green-001);
+  --background-navbar-item-hover: var(--white-003);
+  --background-navbar: var(--green-001);
   /* Editor Page */
   --background-editor-page: var(--white-003);
   /* Patient Editor */
   --background-editor-patient: var(--dark-green-1);
   /* Dashboard editor */
-  --background-editor-dashboard: var(--blue-1);
+  --background-editor-dashboard: var(--olive-green);
   /* To do list editor */
   --background-editor-todo-list: var(--brown-2);
+  /* menu bar */
+  --background-color-menu-item: var(--grey-1);
+  --background-color-menu-item-hover: var(--white-003);
+  --color-menu-item: var(--dark-1);
+  --background-color-right-menu-item: var(--grey-1);
+  --color-right-menu-item: var(--dark-1);
+  /* Table Patient */
+  --background-table-patient: var(--green-001);
+  --background-table-patient-item: var(--white-003);
 }

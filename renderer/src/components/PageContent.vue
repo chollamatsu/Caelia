@@ -47,11 +47,12 @@ export default {
 
 <style scoped>
 .page-content-container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 20vh auto;
   background-color: var(--background-editor-page);
-  width: 100%;
+  width: 96%;
   height: 100%;
+  padding-left: 5px;
 }
 
 .header-container {
