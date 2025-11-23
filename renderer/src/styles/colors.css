@@ -2,28 +2,39 @@
   /* white */
   --white-1: #ffffff;
   --white-2: #f7f4ea;
-  --white-003: #F7F4EA;
+  --white-003: #f7f4ea;
 
   /* dark */
   --grey-1: #cccccc;
   --dark-1: #37363d;
-  --dark-2: #44444E;
+  --dark-2: #44444e;
   --dark-3: rgb(55, 54, 61, 0.2);
+
+  /* Orange */
+  --Orage-001: #E6521F;
+  --Orage-002: #FBDB93;
 
   /* brown */
   --brown-1: #b87c4c;
   --brown-2: #ebd9d1;
 
+
   /* green */
   --dark-green-1: #3a7f7e;
   --olive-green: #a8bba3;
-  --green-001: #D9E9CF;
-  --green-002: #B6CEB4;
+  --green-001: #d9e9cf;
+  --green-002: #b6ceb4;
+  --green-003: #065f46;
 
   /* blue  */
   --blue-1: #b5def7;
   --blue-2: #b5def773;
   --aqua-1: #7bc4c1;
+  --blue-003: #09122C;
+  --blue-004: #6256ed;
+  --blue-005: #878af1;
+  --blue-006: #bdc5f5;
+  --blue-007: #c8caf5;
 
   /* Nav bar */
   --background-navbar: var(--green-001);
@@ -46,4 +57,24 @@
   /* Table Patient */
   --background-table-patient: var(--green-001);
   --background-table-patient-item: var(--white-003);
+  /* patient Card  */
+  --background-color-card-patient: var(--white-003);
+  --color-card-patient: var(--dark-1);
+  --background-color-card-patient-active: var(--green-001);
+  --color-card-patient-active: var(--green-003);
+  --background-color-card-patient-completed: var(--blue-006);
+  --color-card-patient-completed: var(--blue-004);
+  --color-card-patient-unassigned: var(--Orage-001);
+  --background-color-card-patient-unassigned: var(--Orage-002);
+  --button-background-color-complete: var(--blue-004);
+  --button-background-color-complete-hover: var(--blue-005);
+  --button-color-complete: var(--white-1);
+  --button-color-complete-hover: var(--dark-1); 
+  --background-color-refring-detial: var(--white-1);
+  --color-refring-detial: var(--dark-1);
+  --button-add-background-color-complete: var(--blue-006);
+  --button-add-background-color-complete-hover: var(--blue-007);
+  --button-add-color-complete: var(--dark-1);
+  /* Line */
+  --hr-line-color: var(--brown-2);
 }
