@@ -22,7 +22,7 @@
       </div>
     </div>
 
-    <div class="patient-content">
+    <!-- <div class="patient-content">
       <div class="patient-item" v-for="(item, idx) in selectObject" :key="idx">
         <span v-if="currentSelect === 'All'">{{ item.status }}</span>
         <span v-if="currentSelect !== 'Unassigned'">{{ item.assignedTo }}</span>
@@ -30,14 +30,23 @@
         <span>{{ item.assignedTo }}</span>
         <span>{{ item.referalNote }}</span>
       </div>
+    </div> -->
+    <div class="patient-comtainer">
+      <div class="patient-item" v-for="(item, idx) in selectObject" :key="idx">
+        <patient-card :patient-info="item" />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import PatientCard from "../components/PatientCard.vue";
 import { patientList, rightMenuItem } from "../mockData/patientList";
 export default {
   name: "PatientList",
+  components: {
+    PatientCard,
+  },
   data() {
     return {
       currentSelect: "All",
@@ -75,6 +84,7 @@ export default {
   display: grid;
   grid-template-rows: 5vh auto;
   padding-left: 10px;
+  border-radius: 3px;
 }
 
 .menu-bar {
@@ -137,5 +147,10 @@ export default {
   border-radius: 3px;
   cursor: pointer;
   margin: 2px;
+}
+
+.patient-comtainer {
+    display: flex;
+    flex-direction: column;
 }
 </style>
