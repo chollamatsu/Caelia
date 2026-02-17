@@ -12,25 +12,15 @@
         </div>
       </div>
       <div class="right-menu-item-container">
-        <div
-          class="button right-menu-item"
-          v-for="(item, idx) in getRightMenuList"
-          :key="idx"
-        >
-          <span>{{ item.name }}</span>
+        <div class="button" @click="onClickView">
+          <FullView :width="15" :height="15" />
+        </div>
+        <div class="button right-menu-item" @click="onAddNewPatient">
+          <PlusIcon :width="20" :height="20" />
+          <span>Add new Patient </span>
         </div>
       </div>
     </div>
-
-    <!-- <div class="patient-content">
-      <div class="patient-item" v-for="(item, idx) in selectObject" :key="idx">
-        <span v-if="currentSelect === 'All'">{{ item.status }}</span>
-        <span v-if="currentSelect !== 'Unassigned'">{{ item.assignedTo }}</span>
-        <span>{{ item.firstName }}</span>
-        <span>{{ item.assignedTo }}</span>
-        <span>{{ item.referalNote }}</span>
-      </div>
-    </div> -->
     <div class="patient-comtainer">
       <div class="patient-item" v-for="(item, idx) in selectObject" :key="idx">
         <patient-card :patient-info="item" />
@@ -42,10 +32,14 @@
 <script>
 import PatientCard from "../components/PatientCard.vue";
 import { patientList, rightMenuItem } from "../mockData/patientList";
+import FullView from "../common/icons/FullView.vue";
+import PlusIcon from "../common/icons/PlusIocn.vue";
 export default {
   name: "PatientList",
   components: {
     PatientCard,
+    FullView,
+    PlusIcon,
   },
   data() {
     return {
@@ -67,11 +61,12 @@ export default {
       this.selectObject = item.contents;
       console.log("item:", this.selectObject);
     },
-    // getPatientItem(item){
-    //     const filterList = patientList.filter(i => {
-    //         i.status ===
-    //     })
-    // }
+    onClickView() {
+      console.log("click view");
+    },
+    onAddNewPatient() {
+      console.log("click add new patient");
+    },
   },
 };
 </script>
@@ -89,8 +84,10 @@ export default {
 
 .menu-bar {
   display: grid;
-  grid-template-columns: auto 18vw;
+  grid-template-columns: auto auto;
   align-items: center;
+  justify-content: space-between;
+  width: 98%;
 }
 
 .menu-item {
@@ -115,7 +112,9 @@ export default {
 .right-menu-item {
   background-color: var(--background-color-right-menu-item);
   color: var(--color-right-menu-item);
-  width: 15vw;
+  width: auto;
+  height: auto;
+  padding: 0 5px 0 0;
 }
 
 .patient-content {
@@ -131,7 +130,6 @@ export default {
 .patient-item {
   background-color: var(--background-table-patient-item);
   width: 98%;
-  /* height: 3vh; */
   border-radius: 6px;
   margin: 10px 0;
   display: flex;
@@ -150,7 +148,7 @@ export default {
 }
 
 .patient-comtainer {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 </style>
